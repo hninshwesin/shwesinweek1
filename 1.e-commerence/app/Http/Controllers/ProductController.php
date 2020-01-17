@@ -15,7 +15,11 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        return view('product.index',compact('products'));
+
+        $tags = $products->pluck('tags')->flatten()->pluck('name','id')->unique();
+//        dd($products->pluck('tags')->flatten()->pluck('name','id'));
+
+        return view('product.index',compact('products','tags'));
     }
 
     /**

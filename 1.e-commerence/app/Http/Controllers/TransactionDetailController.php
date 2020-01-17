@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\CartItem;
+use App\TransactionDetail;
 use Illuminate\Http\Request;
 
-class CartItemController extends Controller
+class TransactionDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,27 +35,16 @@ class CartItemController extends Controller
      */
     public function store(Request $request)
     {
-        if (auth()->check()) {
-            $cart_item = new \App\CartItem();
-            $cart_item->product_id = $request->product_id;
-            $cart_item->cart_id = auth()->user()->active_cart->id;
-            $cart_item->qty = 1;
-            $cart_item->save();
-
-            return redirect('\shopping-cart');
-        } else {
-            return redirect('\login');
-        }
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\CartItem  $cartItem
+     * @param  \App\TransactionDetail  $transactionDetail
      * @return \Illuminate\Http\Response
      */
-    public function show(CartItem $cartItem)
+    public function show(TransactionDetail $transactionDetail)
     {
         //
     }
@@ -63,10 +52,10 @@ class CartItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\CartItem  $cartItem
+     * @param  \App\TransactionDetail  $transactionDetail
      * @return \Illuminate\Http\Response
      */
-    public function edit(CartItem $cartItem)
+    public function edit(TransactionDetail $transactionDetail)
     {
         //
     }
@@ -75,10 +64,10 @@ class CartItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CartItem  $cartItem
+     * @param  \App\TransactionDetail  $transactionDetail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CartItem $cartItem)
+    public function update(Request $request, TransactionDetail $transactionDetail)
     {
         //
     }
@@ -86,13 +75,11 @@ class CartItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\CartItem  $cartItem
+     * @param  \App\TransactionDetail  $transactionDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CartItem $cartItem)
+    public function destroy(TransactionDetail $transactionDetail)
     {
-//        dd($cartItem);
-        $cartItem->delete();
-        return redirect()->back();
+        //
     }
 }

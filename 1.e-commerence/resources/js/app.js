@@ -28,6 +28,8 @@ Vue.component('cart-image',require('./components/CartImage.vue').default);
 Vue.component('cart-item-description',require('./components/CartItemDescription.vue').default);
 Vue.component('cart-list',require('./components/CartList.vue').default);
 
+Vue.component('checkout-form',require('./components/CheckoutForm.vue').default);
+
 Vue.component('nav-bar',require('./components/NavBar.vue').default);
 Vue.component('nav-item',require('./components/NavItem.vue').default);
 /**

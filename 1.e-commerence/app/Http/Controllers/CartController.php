@@ -47,8 +47,8 @@ class CartController extends Controller
     public function show()
     {
         $customer = auth()->user();
-        $items = $customer->active_cart->items;        
-        return view('cart.index',compact('items'));
+        $current_cart = $customer->active_cart;
+        return view('cart.index',compact('current_cart'));
     }
 
     /**

@@ -16,3 +16,25 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('v1')->group(function (){
+    //localhost/api/v1/coupon-code/dkfj
+    Route::get('coupon-code/{code}',function ($code){
+    if ($code == 'validcode'){
+        return json_encode(true);
+    }
+    else{
+        return json_encode(false);
+    }
+    });
+});
+
+
+Route::prefix('v2')->group(function (){
+    //localhost/api/v2/coupon-code/dkfj
+    Route::get('coupon/{anotherpara}/{code}',function (){
+
+    });
+});
+
+

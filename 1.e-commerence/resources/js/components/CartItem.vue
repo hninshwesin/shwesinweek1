@@ -5,6 +5,7 @@
       <cart-item-description :price="price" :qty="qty">
         <slot></slot>
       </cart-item-description>
+        <slot name="delete_form"></slot>
     </div>
   </li>
 </template>

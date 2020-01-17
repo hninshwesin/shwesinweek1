@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+
 <product-detail-holder
         image_url="{{$product->image_url}}"
         name="{{$product->name}}"
@@ -14,5 +15,9 @@
                 </form>
         </template>
 </product-detail-holder>
+
+{{--    @foreach($product->tags as $tag)--}}
+{{--            {{ $tag->name }}--}}
+{{--    @endforeach--}}
 
 @endsection
